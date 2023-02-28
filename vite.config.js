@@ -50,42 +50,42 @@ export default ({ mode }) => {
             vueJsx(),
             vueSetupExtend(),
             vueSvgPlugin(),
-            // AutoImport({
-            //     eslintrc: {
-            //         enabled: true
-            //     },
-            //     include: [
-            //         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-            //         /\.vue$/,
-            //         /\.vue\?vue/, // .vue
-            //         /\.md$/ // .md
-            //     ],
-            //     imports: [
-            //         'vue',
-            //         'vue-router',
-            //         '@vueuse/core',
-            //         '@vueuse/head',
-            //         {
-            //             pinia: ['defineStore', 'storeToRefs'],
-            //             'vue-router': ['createRouter', 'createWebHashHistory'],
-            //             '@/utils': ['UTC2Date', 'deepClone']
-            //         }
-            //     ],
-            //     dirs: ['src/components', 'src/echarts', 'src/pinia', 'src/mixins'],
+            AutoImport({
+                eslintrc: {
+                    enabled: true
+                },
+                include: [
+                    /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                    /\.vue$/,
+                    /\.vue\?vue/, // .vue
+                    /\.md$/ // .md
+                ],
+                imports: [
+                    'vue',
+                    'vue-router',
+                    '@vueuse/core',
+                    '@vueuse/head',
+                    {
+                        pinia: ['defineStore', 'storeToRefs'],
+                        'vue-router': ['createRouter', 'createWebHashHistory'],
+                        '@/utils': ['UTC2Date', 'deepClone']
+                    }
+                ],
+                dirs: ['src/components', 'src/echarts', 'src/pinia', 'src/mixins'],
 
-            //     resolvers: [ElementPlusResolver()],
-            //     vueTemplate: true,
-            //     cache: false
-            // }),
-            // Components({
-            //     include: [
-            //         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-            //         /\.vue$/,
-            //         /\.vue\?vue/, // .vue
-            //         /\.md$/ // .md
-            //     ],
-            //     resolvers: [ElementPlusResolver()]
-            // }),
+                resolvers: [ElementPlusResolver()],
+                vueTemplate: true,
+                cache: false
+            }),
+            Components({
+                include: [
+                    /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                    /\.vue$/,
+                    /\.vue\?vue/, // .vue
+                    /\.md$/ // .md
+                ],
+                resolvers: [ElementPlusResolver()]
+            }),
             createStyleImportPlugin({
                 resolves: [AndDesignVueResolve(), VantResolve(), ElementPlusResolve(), NutuiResolve(), AntdResolve()],
                 libs: []
