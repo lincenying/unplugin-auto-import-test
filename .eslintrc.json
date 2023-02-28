@@ -1,0 +1,19 @@
+{
+    "extends": ["lcy-vue", "./.eslintrc-auto-import.json"],
+    "globals": {
+        "echarts": true,
+        "Oidc": true,
+        "$ref": "readonly",
+        "$computed": "readonly",
+        "$shallowRef": "readonly",
+        "$customRef": "readonly",
+        "$toRef": "readonly"
+    },
+    "rules": {
+        "no-inline-comments": 0,
+        "no-irregular-whitespace": 0,
+        "no-unused-expressions": 0,
+        "vue/multi-word-component-names": 0,
+        "vue/no-v-for-template-key": 0
+    }
+}

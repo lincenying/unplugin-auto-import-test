@@ -1,0 +1,95 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+@use "sass:math";
+
+// 设计稿宽度
+$vmDesign: 1920;
+
+// 为什么设置 100? 设置成便于计算, 计算rem时只需要将 设计稿的宽度 / 100 即可
+$vmFontsize: 100;
+
+html {
+    font-size: math.div($vmFontsize, $vmDesign) * 100vw;
+
+    @media screen and (max-width: 1919px) {
+        font-size: math.div($vmFontsize, $vmDesign) * 1920Px;
+
+        .wrap {
+            width: 1920px;
+        }
+    }
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    background-color: #091020;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.scroll-none {
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@font-face {
+    font-family: led;
+    src: url("@/assets/fonts/lcd-bq.ttf") format("truetype");
+    font-display: block;
+}
+
+// @font-face {
+//     font-family: AgencyFB;
+//     src: url("@/assets/fonts/AgencyFB.ttf") format("truetype");
+//     font-display: block;
+// }
+
+.color-green {
+    color: #1ac992;
+}
+
+.color-orange {
+    color: #f0a250;
+}
+
+.color-cyan {
+    color: #3fc1ff;
+}
+
+.color-blue {
+    color: #0080ff;
+}
+
+.color-red {
+    color: #ee4f50;
+}
+
+.bg-green {
+    background: #1ac992;
+}
+
+.bg-orange {
+    background: #f0a250;
+}
+
+.bg-cyan {
+    background: #3fc1ff;
+}
+
+.bg-blue {
+    background: #0080ff;
+}
+
+#root {
+    height: 100vh;
+}
