@@ -5,7 +5,6 @@
 </template>
 
 <script setup name="vue3-test">
-// import test from 'test'
 // import { useHead } from '@vueuse/head'
 import globalHeader from './components/global-header.jsx'
 
